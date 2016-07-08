@@ -43,11 +43,12 @@
   2125
 
   Item.joins("INNER JOIN orders ON orders.item_id = items.id").sum("quantity")
+        Order.sum("quantity")
 
 * How much was spent on books?
   180356
 
-  Item.joins("INNER JOIN orders on orders.item_id = items.id").where("category LIKE '%Books%'").sum("price")
+  Item.joins("INNER JOIN orders on orders.item_id = items.id").where("LOWER(category) LIKE '%book%'").sum("price * quantity")
 
   * Simulate buying an item by inserting a User for yourself and an Order for that User.
   User.create(first_name: 'Kate', last_name: 'Walters', email: 'kateisawesome@email.com')
