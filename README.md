@@ -64,13 +64,13 @@
 
 
 
-* What user spent the most?
+<!-- * What user spent the most?
 
   User.joins("INNER JOIN items ON items.id = orders.item_id INNER JOIN orders ON orders.user_id = users.id").order(:price).first
 
 * What were the top 3 highest grossing categories?
 
-  Item.joins("INNER JOIN orders on orders.item_id = items.id").order("items.category").last(3)
+  Item.joins("INNER JOIN orders on orders.item_id = items.id").order("items.category").last(3) -->
 
 
 # rails_practice
